@@ -60,6 +60,8 @@ const jsonLd = {
   ]
 };
 
+import FloatingWA from "@/components/FloatingWA";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -67,8 +69,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${inter.variable} h-full antialiased scroll-smooth`}>
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="min-h-full flex flex-col bg-background text-foreground relative">
         {children}
+        <FloatingWA />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
